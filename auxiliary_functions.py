@@ -249,7 +249,7 @@ def compute_k(dir,meshQ,radii,outlet_indexes_dir,p_dir,coord,edges,p_in,p_out):
     return k, mu_bl_up
 
 def compute_C_value(meshQ,edges,coord,radii,xmax,xmin,ymax,ymin,zmax,zmin):
-    #Computes the value of the constant associated with the LHS term
+    #Computes the value of the constant associated with the RHS term
 
     rho_int=1000
     L_cap=1e-12
@@ -585,7 +585,7 @@ def REV_division(name_mesh,dir_results,meshQ,radii, Q_markers,n_div_x,n_div_y,n_
             K_x : values of the x component of the upscaled permeability tensor (one for each REV).
             K_y : values of the y component of the upscaled permeability tensor (one for each REV).
             K_z : values of the z component of the upscaled permeability tensor (one for each REV).
-            C : values of the LHS upscaled constant (one for each REV).
+            C : values of the RHS upscaled constant (one for each REV).
             mu_bl_up: values of the upscaled blood viscosity (one for each REV).
     '''
     #NOTE THE DIVISION IN MADE FOR A CUBE OF DIM (-1,1)^3
@@ -1874,7 +1874,7 @@ def REV_division_TOTAL(meshQ,dir_results,Q_markers,radii,ind_bound,x,y,z,p_in,p_
             K_x : values of the x component of the upscaled permeability tensor (one for each REV).
             K_y : values of the y component of the upscaled permeability tensor (one for each REV).
             K_z : values of the z component of the upscaled permeability tensor (one for each REV).
-            C : values of the LHS upscaled constant (one for each REV).
+            C : values of the RHS upscaled constant (one for each REV).
             mu_bl_up: values of the upscaled blood viscosity (one for each REV).
     '''
     coord=meshQ.coordinates()
@@ -2347,7 +2347,7 @@ def REV_division_TOTAL(meshQ,dir_results,Q_markers,radii,ind_bound,x,y,z,p_in,p_
 
             
 
-            M_reduced,q_reduced,p_tot,in_prova,out_prova,noin_prova,noout_prova=compute_pressure2(dir,meshQ2,edges_comp1,coord_comp1,labels_comp1_total, radii_comp1, indexes_comp1['inlet']['total'],indexes_comp1['inlet'][dir_str],indexes_comp1['outlet']['total'],indexes_comp1['outlet'][dir_str],Fin_comp1,Fout_comp1,p_in,p_out)
+            p_tot=compute_pressure2(dir,meshQ2,edges_comp1,coord_comp1,labels_comp1_total, radii_comp1, indexes_comp1['inlet']['total'],indexes_comp1['inlet'][dir_str],indexes_comp1['outlet']['total'],indexes_comp1['outlet'][dir_str],Fin_comp1,Fout_comp1,p_in,p_out)
 
 
 
