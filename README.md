@@ -12,7 +12,7 @@ There are 3 test cases:
 
 ## Prerequisites
 - Python 3.x
-- Required Python libraries: `numpy`, `scipy`, `pandas`, `dolfin`, `petsc4py`, `block`, `xii`, `matplotlib`
+- Required Python libraries: `numpy`, `scipy`, `pandas`, `dolfin`,`fenics`,`networkx`, `petsc4py`, `block`, `xii`, `matplotlib`
 
 ## Code Structure
 The code is divided in 5 files:
