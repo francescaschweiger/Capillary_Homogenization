@@ -2185,12 +2185,12 @@ def REV_division_TOTAL(meshQ,dir_results,Q_markers,radii,ind_bound,x,y,z,p_in,p_
 
             #aux.plot_mesh(coord_rev,labels_rev,edges_rev,' Matrix Pressure REV '+str(REV))
 
-            create_mesh_REV(f"{dir_results}/TOTAL/TEST_LABEL"+ name_mesh +str(REV),coord_rev,edges_rev)
+            create_mesh_REV(f"{dir_results}/TEST_LABEL"+ name_mesh +str(REV),coord_rev,edges_rev)
 
 
             meshQ2 = Mesh()
                 
-            with XDMFFile(f"{dir_results}/TOTAL/TEST_LABEL"+ name_mesh +str(REV)+".xdmf") as infile:
+            with XDMFFile(f"{dir_results}/TEST_LABEL"+ name_mesh +str(REV)+".xdmf") as infile:
                 infile.read(meshQ2)
 
             test_markers = MeshFunction('size_t', meshQ2, 0)
@@ -2323,7 +2323,7 @@ def REV_division_TOTAL(meshQ,dir_results,Q_markers,radii,ind_bound,x,y,z,p_in,p_
         
             
 
-            create_mesh_REV(f"{dir_results}/TOTAL/comp_conn_REV_"+ name_mesh +str(REV),coord_comp1,edges_comp1)
+            create_mesh_REV(f"{dir_results}/comp_conn_REV_"+ name_mesh +str(REV),coord_comp1,edges_comp1)
 
 
             points_comp1,indexes_comp1,Fin_comp1,Fout_comp1=compute_faces_TOTAL(labels_comp1_total,labels_comp1,coord_comp1)
@@ -2331,7 +2331,7 @@ def REV_division_TOTAL(meshQ,dir_results,Q_markers,radii,ind_bound,x,y,z,p_in,p_
 
             meshQ2 = Mesh()
                     
-            with XDMFFile(f"{dir_results}/TOTAL/comp_conn_REV_"+ name_mesh +str(REV)+".xdmf") as infile:
+            with XDMFFile(f"{dir_results}/comp_conn_REV_"+ name_mesh +str(REV)+".xdmf") as infile:
                 infile.read(meshQ2)
 
             if dir==1:
